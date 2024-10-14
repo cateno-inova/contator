@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contador de Transações</title>
+    <style>
+        #contador {
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div><h1>Quantidade de transações realizadas no arranjo ourocardo desde que começou a feira</h1></div>
+
+        <div id="contador"></div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const valorInicial = parseInt(urlParams.get('valor'));
+
+        const contadorElement = document.getElementById('contador');
+        let contador = valorInicial;
+
+        function formatarNumero(num) {
+            return num.toLocaleString('pt-BR');
+        }
+
+        function atualizarContador() {
+            contador += 13;
+            contadorElement.textContent = formatarNumero(contador);
+        }
+
+        setInterval(atualizarContador, 100);
+    </script>
+</body>
+</html>

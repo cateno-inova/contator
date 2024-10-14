@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página Inicial</title>
+</head>
+<body>
+    <input type="number" id="valorInicial" placeholder="Valor inicial (opcional)">
+    <button onclick="enviarValor()">Iniciar Contador</button>
+
+    <script>
+        function enviarValor() {
+            let valor = document.getElementById('valorInicial').value;
+            valor = valor ? valor : 1;
+            window.location.href = `contador.html?valor=${valor}`;
+        }
+    </script>
+</body>
+</html>
